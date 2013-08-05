@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <title>Angular-RequireJS sample app</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-main="js/main" src="lib/require/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="style/index.css" />
+</head>
+<style>
+    html, body { overflow: hidden; }
+    .container{position: absolute;width: 100%;top: 0;bottom: 0;max-width: 1600px;overflow: hidden;}
+    .topbar{ height: 44px; width: 100%; background: #333333;}
+    .content{ position: absolute; top: 44px; bottom: 0; left: 120px; right: 0; overflow: hidden;}
+    .side{ position: absolute; top: 44px; bottom: 0; width: 120px; height: 100%; background: #fcefa1;}
+    .main{ position: absolute; top: 0; left: 0px; right: 0; width: 200px; height: 100%; background: #4d81ce;}
+    .main2{ position: absolute; top: 0; left: 200px; right: 0; height: 100%; background: #4d81ce; border-left:1px solid #cccccc;}
+    .header{ height: 44px; background: #999999; width: 100%;}
+    .article{ position: absolute; top: 44px; bottom: 0; width: 100%; overflow: hidden; overflow-y: auto; background: #dddddd;}
+    .menu li a{ display: block; padding: 10px;}
+    .menu li a:hover{ background: #dddddd; color: #4d81ce;}
+</style>
+<body>
+<div id="container">
+    <div class="topbar">
+
+    </div>
+    <div class="side">
+        <div class="header" style="background: #666666"></div>
+        <ul class="menu">
+            <li><a href="#/view1">View 1</a></li>
+            <li><a href="#/view2">View 2</a></li>
+        </ul>
+    </div>
+    <div class="content" ng-view>
+
+    </div>
+</div>
+</body>
+</html>

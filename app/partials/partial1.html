@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="header"></div>
+    <div class="article">
+        {{ scopedAppVersion }}
+        <ul>
+            <li ng-repeat="item in listItems" ng-click="setName(item.name)">{{item.name}} - {{item.describe}}</li>
+        </ul>
+        {{ selectedItem }}
+    </div>
+</div>
+<div class="main2" data-ng-show="hidden">
+    <div class="header"></div>
+    <div class="article">main2</div>
+</div>
