@@ -9,12 +9,20 @@ define(['angular', 'services'], function (angular) {
                 {"name":'item03',"describe":"item test"},
                 {"name":'item04',"describe":"item test"}
             ];
+
             $scope.selectedItem = "init";
-            $scope.setName = function(name){
-                $scope.selectedItem = name;
+            $scope.setName = function(item){
+
+                $scope.item = item;
+
                 $scope.hidden = true;
+                $scope.myStyle={width:'200px'}
             };
 			$scope.scopedAppVersion = version;
+            $scope.close = function(){
+                $scope.hidden = false;
+                $scope.myStyle={width:'100%'}
+            }
 		}])
 		.controller('MyCtrl2', ['$scope', '$injector', function($scope, $injector) {
 			require(['controllers/myctrl2'], function(myctrl2) {

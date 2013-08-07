@@ -1,14 +1,18 @@
-<div class="main">
+<div class="main" ng-style="myStyle">
     <div class="header"></div>
     <div class="article">
         {{ scopedAppVersion }}
         <ul>
-            <li ng-repeat="item in listItems" ng-click="setName(item.name)">{{item.name}} - {{item.describe}}</li>
+            <li ng-repeat="item in listItems" ng-click="setName(item)">{{item.name}} - {{item.describe}}</li>
         </ul>
-        {{ selectedItem }}
     </div>
 </div>
 <div class="main2" data-ng-show="hidden">
-    <div class="header"></div>
-    <div class="article">main2</div>
+    <div class="header"><span ng-click="close()">X</span></div>
+    <div class="article">
+        <form>
+            name: <input type="text" ng-model="item.name"/><br/>
+            describe: <input type="text" ng-model="item.describe"/><br/>
+        </form>
+    </div>
 </div>
