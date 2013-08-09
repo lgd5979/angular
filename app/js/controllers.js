@@ -12,8 +12,8 @@ define(['angular', 'services'], function (angular) {
 
             $scope.selectedItem = "init";
             $scope.setName = function(item){
-
                 $scope.item = item;
+                $scope.item2 = angular.copy(item);
 
                 $scope.hidden = true;
                 $scope.myStyle={width:'200px'}
@@ -22,6 +22,11 @@ define(['angular', 'services'], function (angular) {
             $scope.close = function(){
                 $scope.hidden = false;
                 $scope.myStyle={width:'100%'}
+            };
+
+            $scope.update = function(){
+                $scope.item.name = $scope.item2.name;
+                $scope.item.describe = $scope.item2.describe;
             }
 		}])
 		.controller('MyCtrl2', ['$scope', '$injector', function($scope, $injector) {
